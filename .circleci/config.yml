@@ -1,16 +1,11 @@
 version: 2.1
-  orbs:
-    newman-orb: charge-tech/newman-orb@1.0.0
+orbs:
+  newman: postman/newman@0.0.2
 jobs:
-  newman-collection-run:
+  build:
     executor: newman/postman-newman-docker
     steps:
-        - checkout
-        - newman/newman-run:
-            collection: ./tests/PostmanTrelloCollections.json
-            environment: ./tests/TrelloEnv.json
-workflows:
-  version: 1
-  workflow:
-    jobs:
-    - newman-collection-run
+      - checkout
+      - newman/newman-run:
+          collection: ./tests/PostmanTrelloCollections.json
+          environment: ./tests/TrelloEnv.json
