@@ -8,6 +8,7 @@ jobs:
         - checkout
         - newman/newman-run:
             collection: ./tests/PostmanTrelloCollections.json
+            collection: ./tests/DownloadedTrelloCollection.json
             environment: ./tests/TrelloEnv.json
 workflows:
   version: 1
