@@ -2,10 +2,15 @@ version: 2.1
 orbs:
   newman: postman/newman@0.0.2
 jobs:
-  build:
-  executor: newman/postman-newman-docker
-steps:
-- checkout
-- newman/newman-run:
-collection: ./tests/PostmanTrelloCollections.json
-environment: ./tests/TrelloEnv.json
+  newman-collection-run:
+    executor: newman/postman-newman-docker
+    steps:
+        - checkout
+        - newman/newman-run:
+            collection: ./tests/PostmanTrelloCollections.json
+            environment: ./tests/TrelloEnv.json
+workflows:
+  version: 1
+  workflow:
+    jobs:
+    - newman-collection-run
