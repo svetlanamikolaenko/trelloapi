@@ -1,0 +1,786 @@
+{
+	"info": {
+		"_postman_id": "ae438ced-a024-4c52-a3d7-3fe9803a7b12",
+		"name": "That's a Bug - Postman and Trello",
+		"description": "That's a Bug - Introduction to Postman using the Trello API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+    {
+			"name": "Trello Member Boards",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4dc48e3c-d4ab-45b2-aced-cb8b5b42602e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});" 
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7281bc58-3e9e-4541-a6a9-fdab70bce85b",
+						"exec": [
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{trelloAPIURL}}/1/members/{{userName}}/boards",
+					"host": [
+						"{{trelloAPIURL}}"
+					],
+					"path": [
+						"1",
+						"members",
+						"{{userName}}",
+						"boards"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Trello Member Boards",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{trelloAPIURL}}/1/members/joaogfarias/boards/?token={{trelloToken}}&key={{trelloKey}}",
+							"host": [
+								"{{trelloAPIURL}}"
+							],
+							"path": [
+								"1",
+								"members",
+								"joaogfarias",
+								"boards",
+								""
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{{trelloToken}}"
+								},
+								{
+									"key": "key",
+									"value": "{{trelloKey}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "Surrogate-Control",
+							"value": "no-store"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, must-revalidate, no-cache, no-store"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 01 Jan 1970 00:00:00"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "X-Trello-Version",
+							"value": "1.1439.0"
+						},
+						{
+							"key": "X-Trello-Environment",
+							"value": "Production"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET, PUT, POST, DELETE"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Authorization, Accept, Content-Type"
+						},
+						{
+							"key": "X-RATE-LIMIT-API-TOKEN-INTERVAL-MS",
+							"value": "10000"
+						},
+						{
+							"key": "X-RATE-LIMIT-API-TOKEN-MAX",
+							"value": "100"
+						},
+						{
+							"key": "X-RATE-LIMIT-API-TOKEN-REMAINING",
+							"value": "99"
+						},
+						{
+							"key": "X-RATE-LIMIT-API-KEY-INTERVAL-MS",
+							"value": "10000"
+						},
+						{
+							"key": "X-RATE-LIMIT-API-KEY-MAX",
+							"value": "300"
+						},
+						{
+							"key": "X-RATE-LIMIT-API-KEY-REMAINING",
+							"value": "299"
+						},
+						{
+							"key": "X-RATE-LIMIT-MEMBER-INTERVAL-MS",
+							"value": "10000"
+						},
+						{
+							"key": "X-RATE-LIMIT-MEMBER-MAX",
+							"value": "200"
+						},
+						{
+							"key": "X-RATE-LIMIT-MEMBER-REMAINING",
+							"value": "199"
+						},
+						{
+							"key": "X-Server-Time",
+							"value": "1541081091069"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cc3b-kxHP8KGJq/MolOr1lUGBXlQNtvI\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Length",
+							"value": "5913"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Nov 2018 14:04:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"name\": \"2017\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": false,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"eFjcCLDa\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2017-10-25T15:54:12.116Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"56896408a23bd4fb9097d64a\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/eFjcCLDa/2017\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2018-04-24T14:12:23.130Z\",\n        \"shortUrl\": \"https://trello.com/b/eFjcCLDa\",\n        \"memberships\": [\n            {\n                \"id\": \"56896408a23bd4fb9097d64b\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"2018\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": false,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"5QUGgTOg\",\n        \"powerUps\": [],\n        \"dateLastActivity\": null,\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"5adf3b44a64cb0b5c5b2b64a\",\n        \"starred\": true,\n        \"url\": \"https://trello.com/b/5QUGgTOg/2018\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2018-11-01T13:44:41.817Z\",\n        \"shortUrl\": \"https://trello.com/b/5QUGgTOg\",\n        \"memberships\": [\n            {\n                \"id\": \"5adf3b46a64cb0b5c5b2b8e0\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"APS - 2015.2\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"OFWseW7G\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2015-12-18T14:02:59.108Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"560205997d29d8d7feee9e26\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/OFWseW7G/aps-20152\",\n        \"prefs\": {\n            \"permissionLevel\": \"public\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2015-12-18T14:03:46.274Z\",\n        \"shortUrl\": \"https://trello.com/b/OFWseW7G\",\n        \"memberships\": [\n            {\n                \"id\": \"560205997d29d8d7feee9e27\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"BDA - Projeto 2 - BD Geométrico\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"0pNqqShN\",\n        \"powerUps\": [],\n        \"dateLastActivity\": null,\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"565718faec91fe60d943a19a\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/0pNqqShN/bda-projeto-2-bd-geom%C3%A9trico\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2015-12-18T14:04:14.769Z\",\n        \"shortUrl\": \"https://trello.com/b/0pNqqShN\",\n        \"memberships\": [\n            {\n                \"id\": \"565718faec91fe60d943a19b\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"CESAR\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"YLWEBitL\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2014-08-21T20:58:58.231Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"53eb639fd40d1542d996fdfd\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/YLWEBitL/cesar\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": true,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2015-01-21T02:45:43.679Z\",\n        \"shortUrl\": \"https://trello.com/b/YLWEBitL\",\n        \"memberships\": [\n            {\n                \"id\": \"53eb639fd40d1542d996fe01\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Compras\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"jwWSDsmY\",\n        \"powerUps\": [],\n        \"dateLastActivity\": null,\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"55828c5e18a7bbdf43360485\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/jwWSDsmY/compras\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2016-02-13T20:18:01.382Z\",\n        \"shortUrl\": \"https://trello.com/b/jwWSDsmY\",\n        \"memberships\": [\n            {\n                \"id\": \"55828c5e18a7bbdf43360489\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"CucumberInjector\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": false,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"v70M7fVG\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2018-04-21T18:55:13.672Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"5ab99f9a0d1bcaacb0eee62e\",\n        \"starred\": true,\n        \"url\": \"https://trello.com/b/v70M7fVG/cucumberinjector\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"5ab7e2e4fcb81254016e0dec\",\n            \"backgroundImage\": \"https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1920x1920/a1ddbccb8cd2301da374940e1a3a50fb/photo-1521917931814-f6c3a43e1047.jpg\",\n            \"backgroundImageScaled\": [\n                {\n                    \"width\": 140,\n                    \"height\": 100,\n                    \"url\": \"https://trello-backgrounds.s3.amazonaws.com/SharedBackground/140x100/ea5231e2e2e80c2f130f3b75f91b7825/photo-1521917931814-f6c3a43e1047.jpg\"\n                },\n                {\n                    \"width\": 256,\n                    \"height\": 192,\n                    \"url\": \"https://trello-backgrounds.s3.amazonaws.com/SharedBackground/256x192/07dd79d1d5d87f6b3219efbaba387423/photo-1521917931814-f6c3a43e1047.jpg\"\n                },\n                {\n                    \"width\": 480,\n                    \"height\": 480,\n                    \"url\": \"https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x480/23a2d390234a095bed9cd6f104183fa9/photo-1521917931814-f6c3a43e1047.jpg\"\n                },\n                {\n                    \"width\": 960,\n                    \"height\": 960,\n                    \"url\": \"https://trello-backgrounds.s3.amazonaws.com/SharedBackground/960x960/2e6338aab50bc47ea059570d056b85b6/photo-1521917931814-f6c3a43e1047.jpg\"\n                },\n                {\n                    \"width\": 1024,\n                    \"height\": 1024,\n                    \"url\": \"https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1024x1024/b2f6ac6e744a2d36e3fa210a86fe77ad/photo-1521917931814-f6c3a43e1047.jpg\"\n                },\n                {\n                    \"width\": 2048,\n                    \"height\": 2048,\n                    \"url\": \"https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2048x2048/53e1e45f05e0de13e33a106444b5aa45/photo-1521917931814-f6c3a43e1047.jpg\"\n                },\n                {\n                    \"width\": 1280,\n                    \"height\": 1280,\n                    \"url\": \"https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x1280/6bfea15339a1829c067730a5579ddba7/photo-1521917931814-f6c3a43e1047.jpg\"\n                },\n                {\n                    \"width\": 1920,\n                    \"height\": 1920,\n                    \"url\": \"https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1920x1920/a1ddbccb8cd2301da374940e1a3a50fb/photo-1521917931814-f6c3a43e1047.jpg\"\n                },\n                {\n                    \"width\": 2560,\n                    \"height\": 1600,\n                    \"url\": \"https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2560x1600/e8c3664560d2837da9d0d5327e53e94a/photo-1521917931814-f6c3a43e1047.jpg\"\n                },\n                {\n                    \"width\": 2560,\n                    \"height\": 1920,\n                    \"url\": \"https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2560x1920/53bd9a466bcfea969e324edbb6652ed2/photo-1521917931814-f6c3a43e1047\"\n                }\n            ],\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundBottomColor\": \"#040c14\",\n            \"backgroundTopColor\": \"#04040c\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2018-04-21T19:00:15.563Z\",\n        \"shortUrl\": \"https://trello.com/b/v70M7fVG\",\n        \"memberships\": [\n            {\n                \"id\": \"5ab99f9a0d1bcaacb0eee62f\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Eisenhower Matrix\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": false,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"ciQ5C2gX\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2018-10-27T12:08:47.722Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"54bf1245b61e644cc0ebc531\",\n        \"starred\": true,\n        \"url\": \"https://trello.com/b/ciQ5C2gX/eisenhower-matrix\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2018-10-27T12:13:48.288Z\",\n        \"shortUrl\": \"https://trello.com/b/ciQ5C2gX\",\n        \"memberships\": [\n            {\n                \"id\": \"54bf1245b61e644cc0ebc532\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Estudos\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"s8G158PJ\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2014-12-30T02:53:19.318Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"52fcbc3ba63c3f5361514464\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/s8G158PJ/estudos\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2016-02-13T20:17:21.749Z\",\n        \"shortUrl\": \"https://trello.com/b/s8G158PJ\",\n        \"memberships\": [\n            {\n                \"id\": \"52fcbc3ba63c3f5361514468\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Geral\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": \"51c9cb7bdb16aa4d3c0006d6\",\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"FjjX1UXN\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2013-09-17T18:19:44.286Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"52389a4fb2679f52720003e4\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/FjjX1UXN/geral\",\n        \"prefs\": {\n            \"permissionLevel\": \"org\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2013-12-29T13:27:05.651Z\",\n        \"shortUrl\": \"https://trello.com/b/FjjX1UXN\",\n        \"memberships\": [\n            {\n                \"id\": \"52389a4fb2679f52720003e8\",\n                \"idMember\": \"51d1fd3d6795dab657000081\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52389a54973b0bc04a0003ae\",\n                \"idMember\": \"51ce0c47e0abe9434e000bbc\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52389a54ed16400a4b00027c\",\n                \"idMember\": \"51ca3fd2ddd73c0f0b00069d\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52389a5548e5cd2c27000498\",\n                \"idMember\": \"4fb4e008cf0b5362785901f5\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52389a557e605d27270004f6\",\n                \"idMember\": \"5147ca30f2238cf3590060eb\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52389a55e1e4acd04a000505\",\n                \"idMember\": \"51db4782b6528f694f000d7d\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52389a57c1a806ef1800031b\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52389a577aa4d928120002c2\",\n                \"idMember\": \"51ca2c57c086a7596e000a0e\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52389a5779303c4072000588\",\n                \"idMember\": \"51ce0b807fc21c584e000c86\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52389a58f8802d39270002f3\",\n                \"idMember\": \"51d787d318a42ad430002518\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52389a58260d5af5180003b4\",\n                \"idMember\": \"4ff2dfc84a7167540d9ef01e\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52389a58fb75fa134b00047c\",\n                \"idMember\": \"50c7bb954248a93363013fc7\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"IF962-Project1\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"rxE9zPQh\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2017-12-07T05:37:39.175Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"59a82dd0b3249c1ad6a43ed4\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/rxE9zPQh/if962-project1\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2017-12-13T14:36:45.941Z\",\n        \"shortUrl\": \"https://trello.com/b/rxE9zPQh\",\n        \"memberships\": [\n            {\n                \"id\": \"59a82dd0b3249c1ad6a43ed5\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"59a82dd7950e81d1952e136e\",\n                \"idMember\": \"562e9841ef1ee07d1cc2baef\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Issues\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": \"51c9cb7bdb16aa4d3c0006d6\",\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"WQEiN6FD\",\n        \"powerUps\": [],\n        \"dateLastActivity\": null,\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"52179ef848378d564f000383\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/WQEiN6FD/issues\",\n        \"prefs\": {\n            \"permissionLevel\": \"org\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2013-08-29T23:21:25.386Z\",\n        \"shortUrl\": \"https://trello.com/b/WQEiN6FD\",\n        \"memberships\": [\n            {\n                \"id\": \"52179ef848378d564f000387\",\n                \"idMember\": \"51ca2c57c086a7596e000a0e\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52179f1c8c2fe6226b00044c\",\n                \"idMember\": \"51ca3fd2ddd73c0f0b00069d\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52179f20efee8b3c15000289\",\n                \"idMember\": \"4fb4e008cf0b5362785901f5\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52179f27c8b53dc76e00011e\",\n                \"idMember\": \"5147ca30f2238cf3590060eb\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52179f29f320cec96e000149\",\n                \"idMember\": \"51db4782b6528f694f000d7d\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52179f29f4a5f3c55b00008e\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52179f2a911950721500035b\",\n                \"idMember\": \"4ff2dfc84a7167540d9ef01e\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52179f2a65f240e35b000138\",\n                \"idMember\": \"51d1fd3d6795dab657000081\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Life\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": false,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"8LEb6RNz\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2017-08-21T00:30:17.378Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"52d3479b602a3bd9101f95dd\",\n        \"starred\": true,\n        \"url\": \"https://trello.com/b/8LEb6RNz/life\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2018-10-27T13:50:18.734Z\",\n        \"shortUrl\": \"https://trello.com/b/8LEb6RNz\",\n        \"memberships\": [\n            {\n                \"id\": \"52d3479b602a3bd9101f95e1\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Lullabies of the King\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": false,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"4IsE58dL\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2018-01-19T00:15:21.828Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"53407ff434416dff68867b61\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/4IsE58dL/lullabies-of-the-king\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2018-01-19T00:20:19.917Z\",\n        \"shortUrl\": \"https://trello.com/b/4IsE58dL\",\n        \"memberships\": [\n            {\n                \"id\": \"53407ff434416dff68867b65\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"My Board 1\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": false,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"7Vv5bzh8\",\n        \"powerUps\": [],\n        \"dateLastActivity\": null,\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": \"automatic\",\n        \"id\": \"5bce1bd04069d6628c12c450\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/7Vv5bzh8/my-board-1\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": true,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"shortUrl\": \"https://trello.com/b/7Vv5bzh8\",\n        \"memberships\": [\n            {\n                \"id\": \"5bce1bd04069d6628c12c454\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"My Board 2\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": false,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"Iz4JYpUJ\",\n        \"powerUps\": [],\n        \"dateLastActivity\": null,\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": \"automatic\",\n        \"id\": \"5bce1bd4d8208d424237bd54\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/Iz4JYpUJ/my-board-2\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": true,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"shortUrl\": \"https://trello.com/b/Iz4JYpUJ\",\n        \"memberships\": [\n            {\n                \"id\": \"5bce1bd4d8208d424237bd58\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"My Board 3\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": false,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"XuN1QWDd\",\n        \"powerUps\": [],\n        \"dateLastActivity\": null,\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": \"automatic\",\n        \"id\": \"5bce1c9462f21835e0f12846\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/XuN1QWDd/my-board-3\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": true,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"shortUrl\": \"https://trello.com/b/XuN1QWDd\",\n        \"memberships\": [\n            {\n                \"id\": \"5bce1c9462f21835e0f1284a\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"My Board 4\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": false,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"YRAp6MH7\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2018-10-22T19:03:01.262Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": \"automatic\",\n        \"id\": \"5bce1cdb0c5ba204b348e89d\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/YRAp6MH7/my-board-4\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": true,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2018-10-22T19:03:01.295Z\",\n        \"shortUrl\": \"https://trello.com/b/YRAp6MH7\",\n        \"memberships\": [\n            {\n                \"id\": \"5bce1cdb0c5ba204b348e8a1\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"My Board 7\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": false,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"xrTE34kU\",\n        \"powerUps\": [],\n        \"dateLastActivity\": null,\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": \"automatic\",\n        \"id\": \"5bdb02b6f027e26d31b01be6\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/xrTE34kU/my-board-7\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": true,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"shortUrl\": \"https://trello.com/b/xrTE34kU\",\n        \"memberships\": [\n            {\n                \"id\": \"5bdb02b6f027e26d31b01bea\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"PCC - 2015.2 - Projeto 2\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"Iech2FPt\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2016-01-10T10:04:25.742Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"56659583ef57d3e78aba3b96\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/Iech2FPt/pcc-20152-projeto-2\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2016-02-13T19:49:48.388Z\",\n        \"shortUrl\": \"https://trello.com/b/Iech2FPt\",\n        \"memberships\": [\n            {\n                \"id\": \"56659583ef57d3e78aba3b97\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"5665958d836b4daa5bd3bd12\",\n                \"idMember\": \"53cc01cd2c02772a73233e97\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"566595a367805da79c602892\",\n                \"idMember\": \"56644c5294da0ef75b2c83d2\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"PMI-ACP - Team Performance\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"oeTwC2VL\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2016-09-20T14:24:20.577Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"57d96b34cae211d780fbe697\",\n        \"starred\": true,\n        \"url\": \"https://trello.com/b/oeTwC2VL/pmi-acp-team-performance\",\n        \"prefs\": {\n            \"permissionLevel\": \"public\",\n            \"voting\": \"disabled\",\n            \"comments\": \"public\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2016-10-04T01:28:31.790Z\",\n        \"shortUrl\": \"https://trello.com/b/oeTwC2VL\",\n        \"memberships\": [\n            {\n                \"id\": \"57d96b34cae211d780fbe698\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"57d9ac520be6d2937cfee7a3\",\n                \"idMember\": \"5714dfdab0b9c473f93afc3d\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"57d9ac5e3784eef242d27452\",\n                \"idMember\": \"531dd48287d3fd490fb369ca\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Pensamentos\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": \"52d3c33ceb98b2057bdc359a\",\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"lDZNmvGZ\",\n        \"powerUps\": [],\n        \"dateLastActivity\": null,\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"52d3c40708b1e79838a68b5a\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/lDZNmvGZ/pensamentos\",\n        \"prefs\": {\n            \"permissionLevel\": \"org\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2014-01-13T10:52:03.664Z\",\n        \"shortUrl\": \"https://trello.com/b/lDZNmvGZ\",\n        \"memberships\": [\n            {\n                \"id\": \"52d3c40708b1e79838a68b5e\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Pitch\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": \"51c9cb7bdb16aa4d3c0006d6\",\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"cvU4cX5t\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2013-08-14T18:19:36.432Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"51f2a590288b5b4f3e0006c9\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/cvU4cX5t/pitch\",\n        \"prefs\": {\n            \"permissionLevel\": \"org\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2013-07-27T21:28:30.559Z\",\n        \"shortUrl\": \"https://trello.com/b/cvU4cX5t\",\n        \"memberships\": [\n            {\n                \"id\": \"51f2a590288b5b4f3e0006cd\",\n                \"idMember\": \"4ff2dfc84a7167540d9ef01e\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f2a6622219d418270006ec\",\n                \"idMember\": \"4fb4e008cf0b5362785901f5\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f2a6627e4850783200070a\",\n                \"idMember\": \"5147ca30f2238cf3590060eb\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f2a662c4a41d171200076f\",\n                \"idMember\": \"50c7bb954248a93363013fc7\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f2a6631895b80d63000958\",\n                \"idMember\": \"51ca3fd2ddd73c0f0b00069d\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f2a664c85d0e2e27000915\",\n                \"idMember\": \"51ca2c57c086a7596e000a0e\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f2a66497e16df21300073f\",\n                \"idMember\": \"51ce0b807fc21c584e000c86\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f2a665e914401327000a42\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f2a6656e7f5f6d32000748\",\n                \"idMember\": \"51d1fd3d6795dab657000081\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f2a666561ff85d06000a34\",\n                \"idMember\": \"51ce0c47e0abe9434e000bbc\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f2a667679cf7743200080d\",\n                \"idMember\": \"51d787d318a42ad430002518\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f2a667ec0bd5952f0007b8\",\n                \"idMember\": \"51db4782b6528f694f000d7d\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Product Backlog\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": \"52d3c33ceb98b2057bdc359a\",\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"XTm23FEm\",\n        \"powerUps\": [\n            \"cardAging\",\n            \"voting\",\n            \"calendar\"\n        ],\n        \"dateLastActivity\": \"2014-01-21T01:01:29.269Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"52d3c42961478a073d07027b\",\n        \"starred\": true,\n        \"url\": \"https://trello.com/b/XTm23FEm/product-backlog\",\n        \"prefs\": {\n            \"permissionLevel\": \"org\",\n            \"voting\": \"members\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": true,\n        \"labelNames\": {\n            \"green\": \"MVP\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2014-05-08T13:54:28.265Z\",\n        \"shortUrl\": \"https://trello.com/b/XTm23FEm\",\n        \"memberships\": [\n            {\n                \"id\": \"52d3c42961478a073d07027f\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52d91c1f8105e8ba0d8b552d\",\n                \"idMember\": \"50ccf75389d64ef929001e2a\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52d91c80e431bdd4385684d5\",\n                \"idMember\": \"52d91c59208ba0435887bd22\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52d91ca0698a31911a4d52b6\",\n                \"idMember\": \"50f800f7cd1bde636b009b18\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52d9235301ceab753961c574\",\n                \"idMember\": \"52d9233410edc7885bc2fb95\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Qualidade de Software - CIn/UFPE - 2016.1 - Equipe 2\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"CQq6rTJK\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2016-03-29T14:03:53.966Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"56fa8aac5200a85e555ba601\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/CQq6rTJK/qualidade-de-software-cin-ufpe-20161-equipe-2\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2016-09-14T15:30:30.998Z\",\n        \"shortUrl\": \"https://trello.com/b/CQq6rTJK\",\n        \"memberships\": [\n            {\n                \"id\": \"56fa8aac5200a85e555ba602\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Redes Neurais - 2014.1\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"cv2fAbNA\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2014-07-28T11:15:23.343Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"53c93cf37cec46342b5f05ce\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/cv2fAbNA/redes-neurais-20141\",\n        \"prefs\": {\n            \"permissionLevel\": \"public\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2014-08-13T13:09:17.727Z\",\n        \"shortUrl\": \"https://trello.com/b/cv2fAbNA\",\n        \"memberships\": [\n            {\n                \"id\": \"53c93cf37cec46342b5f05d2\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"53c93d0301e3d841d2b8da9b\",\n                \"idMember\": \"53c29b6601b456d607982adf\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"53cc01f09fbd2d3073950171\",\n                \"idMember\": \"53cc01cd2c02772a73233e97\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Release\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": \"51c9cb7bdb16aa4d3c0006d6\",\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"MsdPp4UV\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2013-07-27T20:01:49.285Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"51f3cd05cf6725b51d000974\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/MsdPp4UV/release\",\n        \"prefs\": {\n            \"permissionLevel\": \"org\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2013-08-10T13:37:39.016Z\",\n        \"shortUrl\": \"https://trello.com/b/MsdPp4UV\",\n        \"memberships\": [\n            {\n                \"id\": \"51f3cd05cf6725b51d000978\",\n                \"idMember\": \"4ff2dfc84a7167540d9ef01e\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f3cd1f46ccf9b3420010a3\",\n                \"idMember\": \"4fb4e008cf0b5362785901f5\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f3cd1f4909d39e60001154\",\n                \"idMember\": \"5147ca30f2238cf3590060eb\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f3cd2060e39ac7780011a9\",\n                \"idMember\": \"50c7bb954248a93363013fc7\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f3cd215ae0f77559001222\",\n                \"idMember\": \"51ca3fd2ddd73c0f0b00069d\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f3cd213c9e140c51000fed\",\n                \"idMember\": \"51ca2c57c086a7596e000a0e\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f3cd22de5a612951001257\",\n                \"idMember\": \"51ce0b807fc21c584e000c86\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f3cd2264e664501500148a\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f3cd2392b7408644000aa7\",\n                \"idMember\": \"51d1fd3d6795dab657000081\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f3cd23faa4a1497b00114b\",\n                \"idMember\": \"51ce0c47e0abe9434e000bbc\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f3cd2449535286270001c6\",\n                \"idMember\": \"51d787d318a42ad430002518\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"51f3cd24a5ef0d3f150011c4\",\n                \"idMember\": \"51db4782b6528f694f000d7d\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Requisitos - BackEnd\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": \"51c9cb7bdb16aa4d3c0006d6\",\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"jIlalwfz\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2013-10-10T18:45:10.289Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"5238839894d217e50500288b\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/jIlalwfz/requisitos-backend\",\n        \"prefs\": {\n            \"permissionLevel\": \"org\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"shortUrl\": \"https://trello.com/b/jIlalwfz\",\n        \"memberships\": [\n            {\n                \"id\": \"5238839894d217e50500288f\",\n                \"idMember\": \"51d1fd3d6795dab657000081\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"5238881714976c32030001e7\",\n                \"idMember\": \"51ca2c57c086a7596e000a0e\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52388818bce6b70d64002b80\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"523888205436df6964003dc8\",\n                \"idMember\": \"4fb4e008cf0b5362785901f5\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"523888289c348f74070010ce\",\n                \"idMember\": \"5147ca30f2238cf3590060eb\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Software Educativo - 2015.2\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"PTSjeh56\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2015-12-16T13:11:35.259Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"55f89ea9cd321737dd16a3bc\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/PTSjeh56/software-educativo-20152\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2016-02-13T19:49:39.703Z\",\n        \"shortUrl\": \"https://trello.com/b/PTSjeh56\",\n        \"memberships\": [\n            {\n                \"id\": \"55f89ea9cd321737dd16a3bd\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"56015ccaca17abe56419056d\",\n                \"idMember\": \"56005198790f2ba8822302b4\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"563a10e986fe2c1e2a06cde7\",\n                \"idMember\": \"52d692a2dabfa5cc2f86f9f9\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Sprint\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": \"52d3c33ceb98b2057bdc359a\",\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"f2tr6MaZ\",\n        \"powerUps\": [\n            \"cardAging\",\n            \"voting\",\n            \"calendar\"\n        ],\n        \"dateLastActivity\": \"2014-02-15T21:57:06.920Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"52d3c444734318a7495096b6\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/f2tr6MaZ/sprint\",\n        \"prefs\": {\n            \"permissionLevel\": \"org\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2014-05-16T15:19:48.468Z\",\n        \"shortUrl\": \"https://trello.com/b/f2tr6MaZ\",\n        \"memberships\": [\n            {\n                \"id\": \"52d3c444734318a7495096ba\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52e2f835d3ff15f64b0d9619\",\n                \"idMember\": \"52d9233410edc7885bc2fb95\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52e2f8362e463fd54f471e58\",\n                \"idMember\": \"50f800f7cd1bde636b009b18\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52e2f83724ac569e66ab7b39\",\n                \"idMember\": \"52d91c59208ba0435887bd22\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"52e2f8370362658c7bdcd42c\",\n                \"idMember\": \"50ccf75389d64ef929001e2a\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Sprint Retro\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": \"52d3c33ceb98b2057bdc359a\",\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"jjXgFY7y\",\n        \"powerUps\": [],\n        \"dateLastActivity\": null,\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"52d3c7485af27dec3a6f2e60\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/jjXgFY7y/sprint-retro\",\n        \"prefs\": {\n            \"permissionLevel\": \"org\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2014-02-27T16:34:20.262Z\",\n        \"shortUrl\": \"https://trello.com/b/jjXgFY7y\",\n        \"memberships\": [\n            {\n                \"id\": \"52d3c7495af27dec3a6f2e6a\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Udemy Trello Board Exercises\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": false,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"H23UPV5b\",\n        \"powerUps\": [],\n        \"dateLastActivity\": null,\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": \"automatic\",\n        \"id\": \"5bce1badf1065226a38988f3\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/H23UPV5b/udemy-trello-board-exercises\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": true,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"shortUrl\": \"https://trello.com/b/H23UPV5b\",\n        \"memberships\": [\n            {\n                \"id\": \"5bce1badf1065226a38988f7\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Week\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": false,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"49AgniDM\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2018-11-01T12:11:57.725Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"54a213a407dc32fe964db2ca\",\n        \"starred\": true,\n        \"url\": \"https://trello.com/b/49AgniDM/week\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"DONE\",\n            \"yellow\": \"0,5 HOUR\",\n            \"orange\": \"1 HOUR\",\n            \"red\": \"2 HOUR\",\n            \"purple\": \"3 HOUR\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"TODO\"\n        },\n        \"dateLastView\": \"2018-11-01T12:16:58.443Z\",\n        \"shortUrl\": \"https://trello.com/b/49AgniDM\",\n        \"memberships\": [\n            {\n                \"id\": \"54a213a407dc32fe964db2cb\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"Welcome Board\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"einOvcNL\",\n        \"powerUps\": [\n            \"voting\"\n        ],\n        \"dateLastActivity\": \"2013-06-28T02:08:02.461Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"4fd1fc746c27075f3bbf52f4\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/einOvcNL/welcome-board\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"members\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2014-05-16T15:20:02.613Z\",\n        \"shortUrl\": \"https://trello.com/b/einOvcNL\",\n        \"memberships\": [\n            {\n                \"id\": \"4fd1fc746c27075f3bbf52f5\",\n                \"idMember\": \"4e6a7fad05d98b02ba00845c\",\n                \"memberType\": \"normal\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            },\n            {\n                \"id\": \"4fd1fc746c27075f3bbf5309\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    },\n    {\n        \"name\": \"fgsdfg\",\n        \"desc\": \"\",\n        \"descData\": null,\n        \"closed\": true,\n        \"idOrganization\": null,\n        \"limits\": null,\n        \"pinned\": null,\n        \"shortLink\": \"4vV2McO1\",\n        \"powerUps\": [],\n        \"dateLastActivity\": \"2014-06-16T11:44:43.777Z\",\n        \"idTags\": [],\n        \"datePluginDisable\": null,\n        \"creationMethod\": null,\n        \"id\": \"539ed89f4bb7e32c6b8f9614\",\n        \"starred\": false,\n        \"url\": \"https://trello.com/b/4vV2McO1/fgsdfg\",\n        \"prefs\": {\n            \"permissionLevel\": \"private\",\n            \"voting\": \"disabled\",\n            \"comments\": \"members\",\n            \"invitations\": \"members\",\n            \"selfJoin\": false,\n            \"cardCovers\": true,\n            \"cardAging\": \"regular\",\n            \"calendarFeedEnabled\": false,\n            \"background\": \"blue\",\n            \"backgroundImage\": null,\n            \"backgroundImageScaled\": null,\n            \"backgroundTile\": false,\n            \"backgroundBrightness\": \"dark\",\n            \"backgroundColor\": \"#0079BF\",\n            \"backgroundBottomColor\": \"#0079BF\",\n            \"backgroundTopColor\": \"#0079BF\",\n            \"canBePublic\": true,\n            \"canBeOrg\": true,\n            \"canBePrivate\": true,\n            \"canInvite\": true\n        },\n        \"subscribed\": false,\n        \"labelNames\": {\n            \"green\": \"\",\n            \"yellow\": \"\",\n            \"orange\": \"\",\n            \"red\": \"\",\n            \"purple\": \"\",\n            \"blue\": \"\",\n            \"sky\": \"\",\n            \"lime\": \"\",\n            \"pink\": \"\",\n            \"black\": \"\"\n        },\n        \"dateLastView\": \"2014-06-16T11:45:22.130Z\",\n        \"shortUrl\": \"https://trello.com/b/4vV2McO1\",\n        \"memberships\": [\n            {\n                \"id\": \"539ed89f4bb7e32c6b8f9618\",\n                \"idMember\": \"4fd1fc736c27075f3bbf52dd\",\n                \"memberType\": \"admin\",\n                \"unconfirmed\": false,\n                \"deactivated\": false\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+        {
+			"name": "Trello Board Create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4dc48e3c-d4ab-45b2-aced-cb8b5b42602e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.environment.set(\"trelloBoardid\", pm.response.json().id);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7281bc58-3e9e-4541-a6a9-fdab70bce85b",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{trelloAPIURL}}/1/boards/?name={{boardName}}&token={{trelloToken}}&key={{trelloKey}}",
+					"host": [
+						"{{trelloAPIURL}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "{{boardName}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trelloToken}}"
+						},
+						{
+							"key": "key",
+							"value": "{{trelloKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+        {
+			"name": "Create TODO List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0ee945e6-afc4-45ba-94f2-fdee700ab601",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Name to equal TODO\", function () {",
+							"    const data = pm.response.json();",
+							"    pm.expect(data.name).to.eql(pm.environment.get(\"TODOListName\"))",
+							"});",
+							"",
+							"pm.test(\"Status to be not closed\", function () {",
+							"    const data = pm.response.json();",
+							"    pm.expect(data.closed).to.eql(false);",
+							"});",
+							"",
+							"pm.environment.set(\"TODOListId\", pm.response.json().id);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ffd6f901-a316-4798-9289-33e4b1e22683",
+						"exec": [
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{trelloAPIURL}}/1/lists?name={{TODOListName}}&idBoard={{trelloBoardid}}&token={{trelloToken}}&key={{trelloKey}}",
+					"host": [
+						"{{trelloAPIURL}}"
+					],
+					"path": [
+						"1",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "{{TODOListName}}"
+						},
+						{
+							"key": "idBoard",
+							"value": "{{trelloBoardid}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trelloToken}}"
+						},
+						{
+							"key": "key",
+							"value": "{{trelloKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+        {
+			"name": "Create DONE List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ce349fba-d161-4246-95b4-b44f481f0bfc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Name to equal TODO\", function () {",
+							"    const data = pm.response.json();",
+							"    pm.expect(data.name).to.eql(pm.environment.get(\"DONEListName\"));",
+							"});",
+							"",
+							"pm.test(\"Status to be not closed\", function () {",
+							"    const data = pm.response.json();",
+							"    pm.expect(data.closed).to.eql(false);",
+							"});",
+							"",
+							"pm.test(\"Created on correct board\", function () {",
+							"    const data = pm.response.json();",
+							"    pm.expect(data.idBoard).to.eql(pm.environment.get(\"trelloBoardid\"));",
+							"});",
+							"",
+							"pm.environment.set(\"DONEListID\", pm.response.json().id);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "54107a2e-70f6-4ad0-9f3d-4669e10e6ad2",
+						"exec": [
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{trelloAPIURL}}/1/lists?name={{DONEListName}}&idBoard={{trelloBoardid}}&token={{trelloToken}}&key={{trelloKey}}",
+					"host": [
+						"{{trelloAPIURL}}"
+					],
+					"path": [
+						"1",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "{{DONEListName}}"
+						},
+						{
+							"key": "idBoard",
+							"value": "{{trelloBoardid}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trelloToken}}"
+						},
+						{
+							"key": "key",
+							"value": "{{trelloKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+        {
+			"name": "Create Learn on Testing Card",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1330f262-0bc8-4d06-bc7c-edee5a20063d",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Name to equal That's a Bug\", function () {",
+							"    const data = pm.response.json();",
+							"    pm.expect(data.name).to.eql(pm.environment.get(\"ThatsABugCardName\"))",
+							"});",
+							"",
+							"pm.test(\"Status to be not closed\", function () {",
+							"    const data = pm.response.json();",
+							"    pm.expect(data.closed).to.eql(false)",
+							"});",
+							"",
+							"pm.test(\"Created on correct list\", function () {",
+							"    const data = pm.response.json();",
+							"     pm.expect(data.idList).to.eql(pm.environment.get(\"TODOListId\"));",
+							"});",
+							"",
+							"pm.test(\"Created on correct board\", function () {",
+							"    const data = pm.response.json();",
+							"     pm.expect(data.idBoard).to.eql(pm.environment.get(\"trelloBoardid\"));",
+							"});",
+							"",
+							"pm.test(\"No votes nor attachements\", function () {",
+							"    const badges = pm.response.json().badges;",
+							"    ",
+							"     pm.expect(badges.votes).to.eql(0);",
+							"     ",
+							"     const attachments = JSON.parse(badges.attachments);",
+							"     for(const attachment in attachments) {",
+							"          pm.expect(attachment.board).to.eql(0);",
+							"         pm.expect(attachment.card).to.eql(0);",
+							"     }",
+							"});",
+							"",
+							"pm.environment.set(\"ThatsABugCardID\", pm.response.json().id);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b91a2d28-3e33-4162-b93e-75f72265fa39",
+						"exec": [
+							"",
+							"const remainingCards = \"remainingCards\";",
+							"",
+							"if(pm.environment.get(remainingCards) === undefined) {",
+							"    pm.environment.set(remainingCards, 100);",
+							"}",
+							"",
+							"if(pm.environment.get(remainingCards) > 0) {",
+							"    pm.environment.set(remainingCards, pm.environment.get(remainingCards) - 1);",
+							"    postman.setNextRequest(\"Create Learn on That's a Bug card\");",
+							"} else {",
+							"    pm.environment.unset(remainingCards) ",
+							"    postman.setNextRequest(\"Move card from TODO to Done\");",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{trelloAPIURL}}/1/cards?token={{trelloToken}}&key={{trelloKey}}&idList={{TODOListId}}&name={{ThatsABugCardName}}",
+					"host": [
+						"{{trelloAPIURL}}"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{trelloToken}}"
+						},
+						{
+							"key": "key",
+							"value": "{{trelloKey}}"
+						},
+						{
+							"key": "idList",
+							"value": "{{TODOListId}}"
+						},
+						{
+							"key": "name",
+							"value": "{{ThatsABugCardName}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+        {
+			"name": "Move card from TODO to Done",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d0b7ffac-fc9f-4499-8a08-9e967c81341c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Name to equal as before\", function () {",
+							"    const data = pm.response.json();",
+							"    pm.expect(data.name).to.eql(pm.environment.get(\"ThatsABugCardName\"));",
+							"});",
+							"",
+							"",
+							"pm.test(\"On the list DONE\", function () {",
+							"    const data = pm.response.json();",
+							"    pm.expect(data.idList).to.eql(pm.environment.get(\"DONEListID\"));",
+							"});",
+							"",
+							"postman.setNextRequest(\"Invalid - Move inexistent card Numeric ID\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7c75b65d-c5fb-4acd-b367-5003ec345e7d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{trelloAPIURL}}/1/cards/{{ThatsABugCardID}}/?idList={{DONEListID}}&key={{trelloKey}}&token={{trelloToken}}",
+					"host": [
+						"{{trelloAPIURL}}"
+					],
+					"path": [
+						"1",
+						"cards",
+						"{{ThatsABugCardID}}",
+						""
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "{{DONEListID}}"
+						},
+						{
+							"key": "key",
+							"value": "{{trelloKey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trelloToken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+        {
+			"name": "Invalid - Move inexistent card Numeric ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d0b7ffac-fc9f-4499-8a08-9e967c81341c",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response is an 'invalid id' text\", function () {",
+							"    pm.expect(pm.response.text()).to.eql(\"invalid id\")",
+							"});",
+							"",
+							"postman.setNextRequest(\"Invalid - Move inexistent card Crypto Id\");",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{trelloAPIURL}}/1/cards/4998798749874/idList?value={{DONEListID}}&token={{trelloToken}}&key={{trelloKey}}",
+					"host": [
+						"{{trelloAPIURL}}"
+					],
+					"path": [
+						"1",
+						"cards",
+						"4998798749874",
+						"idList"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "{{DONEListID}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trelloToken}}"
+						},
+						{
+							"key": "key",
+							"value": "{{trelloKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+        {
+			"name": "Invalid - Move inexistent card Crypto Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d0b7ffac-fc9f-4499-8a08-9e967c81341c",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Response is an 'The requested resource was not found.' text\", function () {",
+							"    pm.expect(pm.response.text()).to.eql(\"The requested resource was not found.\");",
+							"});",
+							"",
+							"postman.setNextRequest(\"Delete board\");",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{trelloAPIURL}}/1/cards/5c12a8e7127314189c9d21b2/idList?value={{DONEListID}}&token={{trelloToken}}&key={{trelloKey}}",
+					"host": [
+						"{{trelloAPIURL}}"
+					],
+					"path": [
+						"1",
+						"cards",
+						"5c12a8e7127314189c9d21b2",
+						"idList"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "{{DONEListID}}"
+						},
+						{
+							"key": "token",
+							"value": "{{trelloToken}}"
+						},
+						{
+							"key": "key",
+							"value": "{{trelloKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+        {
+			"name": "Delete board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d2e8ce56-2280-4c0b-8ae2-7c46ba3923f6",
+						"exec": [
+							"var c = pm.environment.get(\"counter\");",
+							"console.log(c);",
+							"",
+							"switch (c)",
+							"{",
+							"",
+							"case '0':",
+							"    pm.environment.unset(\"counter\");",
+							"    var set = pm.environment.set(\"counter\", 1);",
+							"    var c = pm.environment.get(\"counter\")",
+							"    console.log(\"inlooooppp counter is-->\",c);",
+							"    postman.setNextRequest(\"Trello Member Boards\");",
+							"    break;",
+							"case 1:",
+							"    console.log(\"am in 1 now....\");",
+							"    pm.environment.unset(\"trelloBoardid\");",
+							"    break;",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{trelloAPIURL}}/1/boards/{{trelloBoardid}}/?token={{trelloToken}}&key={{trelloKey}}",
+					"host": [
+						"{{trelloAPIURL}}"
+					],
+					"path": [
+						"1",
+						"boards",
+						"{{trelloBoardid}}",
+						""
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{trelloToken}}"
+						},
+						{
+							"key": "key",
+							"value": "{{trelloKey}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+        ]
+}
