@@ -7,5 +7,5 @@ jobs:
     steps:
         - checkout
         - newman/newman-run:
-            collection: ./tests/DownloadedTrelloCollection.json
+            collection: ./tests/PostmanTrelloCollection.json
             environment: ./tests/TrelloEnv.json
